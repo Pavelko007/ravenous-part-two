@@ -3,16 +3,16 @@ import styles from "./BusinessList.module.css";
 
 import Business from "../Business/Business";
 
-const BusinessList = () => {
+const BusinessList = (params) => {
   return (
     <div className={styles.BusinessList}>
-      <Business />
-      <Business />
-      <Business />
-      <Business />
-      <Business />
-      <Business />
+      {
+        params.businesses.map((business) => {
+          return <Business business={business} />;
+        })
+      }
     </div>
+
   );
 };
 
